@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <script src="/js/student.js"></script>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/student.css">
+</head>
+
+<body>
+    <h1 style="color: white">Pershendje, <%= username %>!</h1>
+    <div class="container">
+        <div class="flexitem" id="nav">
+            <div class="flexitem">
+                <a id="btnInternship" onclick="showFunc('i')">Internships</a>
+            </div>
+            <div class="flexitem">
+                <a id="btnComplaint" onclick="showFunc('c')">Complaints</a>
+            </div>
+        </div>
+        <div class="flexitem" id="logout">
+            <form action="/"></form>
+            <button type="button">Log Out</button>
+            </form>
+        </div>
+    </div>
+    <div class="container" id="applyInternship">
+        int
+    </div>
+    <div class="container" id="submitComplaint">
+        <div>
+            <input type="text" name="name" id="name" placeholder="Complaint Reason" required>
+        </div>
+        <div>
+            <textarea name="infoInt" id="infoInt" cols="30" rows="10" placeholder="Further explanation"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>

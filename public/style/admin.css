@@ -1,0 +1,99 @@
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 20px;
+    margin-bottom: 10vh;
+    text-align: center;
+}
+
+.flexitem {
+    display: flex;
+}
+
+#nav.flexitem {
+    font-size: 24px;
+    justify-content: space-evenly;
+    width: 75%;
+}
+
+#logout.flexitem {
+    justify-content: end;
+    width: 25%;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+}
+
+a:hover {
+    color: #6788a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: #a02020;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+button:hover {
+    padding: 9px 25px;
+    background-color: #d01717;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+
+}
+input, textarea, select{
+    /* make text bigger and bold*/
+    color: #75758292;
+    font-size: 16px;
+    font-weight: bold;
+    border-color: rgb(97, 95, 95);
+    border-radius: 4px;
+    padding: 5px 5px;
+    margin-bottom: 6px;
+    text-align: center;
+    width: 300px;
+}
+select{border-width: 2px;
+    text-align: start;
+    width: 313px;
+}
+
+#addStudent.container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0px 15%;
+}
+#complaints.container{
+    display: none;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+
+    margin: 0px 15%;
+}
+#addInternship.container{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    text-align: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 0px 15%;
+}

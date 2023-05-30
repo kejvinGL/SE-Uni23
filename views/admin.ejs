@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <script src="/js/admin.js"></script>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/admin.css">
+
+</head>
+
+<body>
+    <h1 style="color: white">Pershendje, <%= username %>!</h1>
+    <div class="container">
+        <div class="flexitem" id="nav">
+            <div class="flexitem">
+                <a id="btnStudent" onclick="showFunc('s')">Add Student</a>
+            </div>
+            <div class="flexitem">
+                <a id="btnComplaint" onclick="showFunc('c')">Complaints</a>
+            </div>
+            <div class="flexitem">
+                <a id="btnInternship" onclick="showFunc('i')">Internships</a>
+            </div>
+        </div>
+        <div class="flexitem" id="logout">
+            <form action="/"></form>
+            <button type="button">Log Out</button>
+            </form>
+        </div>
+    </div>
+    <div class="container" id="addStudent">
+        <form id="addStudent" action="/addStudent" method="post ">
+            <div>
+                <input type="text" name="name" id="name" placeholder="First Name" required>
+            </div>
+            <div>
+                <input type="text" name="name" id="name" placeholder="Last Name" required>
+            </div>
+            <div>
+                <input type="date" name="birthday" id="birthday">
+            </div>
+            <div>
+                <select name="faculty" id="faculty">
+                    <option value="">Select Faculty</option>
+                    <option value="FSHN">Fakulteti i Shkencave te Natyres</option>
+                    <option value="FSHMT">Fakulteti i Shkencave Mjekesore Teknike</option>
+                    <option value="FE">Fakulteti Ekonomik</option>
+                </select>
+            </div>
+        </form>
+        <form action="/addStudent" method="POST">
+            <button type="submit" action>Submit</button>
+        </form>
+
+    </div>
+
+    <div class="container" id="complaints">
+        cmp
+    </div>
+    <div class="container" id="addInternship">
+        <div>
+            <input type="text" name="name" id="name" placeholder="Internship Name" required>
+        </div>
+        <div>
+            <textarea name="infoInt" id="infoInt" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>
