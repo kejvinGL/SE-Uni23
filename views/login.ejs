@@ -13,47 +13,48 @@
 
 <body>
     <div class="container">
-        <div class="login">
-            <h2 class="flexitem">Login</h2>
-            <select class="flexitem" id="dropdown" onchange="selectFunction()">
-                <option value="" selected>Select an option</option>
-                <option value="student" id="student">Student</option>
-                <option value="admin" id="admin">Admin</option>
-            </select>
-            <form id="aForm" action="/admin" method="post" style="display: none;">
-                <div class="login">
-                    <h2 class="flexitem">Admin Login</h2>
-                    <div class="flexitem">
-                        <input type="text" name="username" placeholder="Username">
-                    </div>
-                    <div class="flexitem">
-                        <input type="password" name="password" placeholder="Password">
-                    </div>
-                    <div class="flexitem">
-                        <form action="/admin" method="POST">
-                            <button type="submit">Login</button>
-                        </form>
-                    </div>
-                </div>
-            </form>
 
-            <form id="sForm" action="/student" method="post" style="display: none;">
+        <% if (error!=null) { %>
+            <h3 class="flexitem" style="color: red; font-size:10px;">
+                <%= error %>
+            </h3>
+            <% }%>
                 <div class="login">
-                    <h2 class="flexitem">Student Login</h2>
-                    <div class="flexitem">
-                        <input type="text" name="username" placeholder="Username">
-                    </div>
-                    <div class="flexitem">
-                        <input type="password" name="password" placeholder="Password">
-                    </div>
-                    <div class="flexitem">
-                        <form action="/student" method="POST">
-                            <button type="submit">Login</button>
-                        </form>
-                    </div>
+                    <select class="flexitem" id="dropdown" onchange="selectFunction()">
+                        <option value="" selected>Select an option</option>
+                        <option value="student" id="student">Student</option>
+                        <option value="admin" id="admin">Admin</option>
+                    </select>
+                    <form id="aForm" action="/admin" method="post" style="display: none;">
+                        <div class="login">
+                            <h2 class="flexitem">Admin Login</h2>
+                            <div class="flexitem">
+                                <input type="text" name="username" placeholder="Username">
+                            </div>
+                            <div class="flexitem">
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                            <div class="flexitem">
+                                <button type="submit">Login</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <form id="sForm" action="/student" method="post" style="display: none;">
+                        <div class="login">
+                            <h2 class="flexitem">Student Login</h2>
+                            <div class="flexitem">
+                                <input type="text" name="username" placeholder="Username">
+                            </div>
+                            <div class="flexitem">
+                                <input type="password" name="password" placeholder="Password">
+                            </div>
+                            <div class="flexitem">
+                                <button type="submit">Login</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
-        </div>
     </div>
 
 </body>

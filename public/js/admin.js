@@ -21,3 +21,18 @@ function showFunc(f) {
     }
 
 }
+function resolveTable() {
+    // Update the table with the new data
+    const complaints = data.complaints;
+    let tableHTML = "";
+    complaints.forEach(complaint => {
+        tableHTML += `
+            <tr>
+              <td>${complaint.id}</td>
+              <td>${complaint.category}</td>
+              <td>${complaint.description}</td>
+            </tr>
+          `
+    });
+    complaintsTable.innerHTML = tableHTML;
+}

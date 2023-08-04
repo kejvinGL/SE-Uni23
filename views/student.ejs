@@ -13,7 +13,7 @@
 
 
 <body>
-    <h1 style="color: white">Pershendje, <%= username %>!</h1>
+    <h1 style="color: white">Pershendje, <%= firstname %>!</h1>
     <div class="container">
         <div class="flexitem" id="nav">
             <div class="flexitem">
@@ -24,21 +24,66 @@
             </div>
         </div>
         <div class="flexitem" id="logout">
-            <form action="/"></form>
-            <button type="button">Log Out</button>
+            <form action="/" method="get">
+                <button type="submit">Log Out</button>
             </form>
         </div>
     </div>
     <div class="container" id="applyInternship">
-        int
+        <table id="internshipsTable">
+            <tr>
+                <th style="width: 12vw">Internship Name</th>
+                <th style="width: 30vw;">Details</th>
+
+                <% for(var i=0; i<available.length; i++){ %>
+            <tr>
+                <td>
+                    <%= available[i].internship_name %>
+                </td>
+                <td style="font-size: 10px; max-width: 20vw;">
+                    <%= available[i].details %>
+                </td>
+                <td style="padding-left: 5vw; ">
+                    <form action="/applyInternship" method="post">
+                        <input type="hidden" name="id" value="<%=available[i].id %>">
+                        <button type="submit" style="background-color: #6788a9;">Apply</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+                <% for(var i=0; i<applied.length; i++){ %>
+                    <tr>
+                        <td>
+                            <%= applied[i].internship_name %>
+                        </td>
+                        <td style="font-size: 10px; max-width: 20vw;">
+                            <%= applied[i].details %>
+                        </td>
+                        <td style="padding-left: 5vw; ">
+                            <form>
+                                <button style=" color:black; background-color: #a5a5a5;" disabled>Applied</button>
+                            </form>
+                        </td>
+                    </tr>
+                    <% } %>
+                        </tr>
+        </table>
+
+
     </div>
     <div class="container" id="submitComplaint">
-        <div>
-            <input type="text" name="name" id="name" placeholder="Complaint Reason" required>
-        </div>
-        <div>
-            <textarea name="infoInt" id="infoInt" cols="30" rows="10" placeholder="Further explanation"></textarea>
-        </div>
+        <form action="/addComplaint" method="post">
+
+            <div>
+                <input type="text" name="category" id="category" placeholder="Complaint Reason" required>
+            </div>
+            <div>
+                <textarea name="description" id="description" cols="30" rows="10" placeholder="Further explanation"
+                    required></textarea>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+            </div>
     </div>
 </body>
 
