@@ -19,9 +19,6 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware
 app.use(cookieParser());
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static());
-}
 
 // Routes
 app.get("/", (req, res) => {
