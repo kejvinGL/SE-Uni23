@@ -8,11 +8,12 @@ const queries = require('./src/queries');
 const cookieParser = require('cookie-parser');
 const app = express();
 const PORT = process.env.PORT || 3000
+const serveStatic = require("serve-static");
 
 // Configuration
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, "/public")));
+app.use(serveStatic(path.join(__dirname, "/public")));
 
 
 // Middleware
