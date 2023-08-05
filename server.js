@@ -22,8 +22,7 @@ app.use(cookieParser());
 
 // Routes
 app.get("/", (req, res) => {
-  res.send('Hello World')
-  // res.render("login.ejs", { error: null });
+  res.render("login.ejs", { error: null });
 });
 
 
