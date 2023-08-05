@@ -13,7 +13,8 @@ const serveStatic = require("serve-static");
 // Configuration
 app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
-app.use(serveStatic(path.join(__dirname, "/public")));
+app.use("/node_modules", express.static('node_modules'));
+app.use(express.static(path.join(__dirname, "public")));
 
 
 // Middleware
