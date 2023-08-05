@@ -14,6 +14,7 @@ app.set("view engine", "ejs");
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
+
 // Middleware
 app.use(cookieParser());
 if (process.env.NODE_ENV === "production") {
@@ -159,4 +160,4 @@ app.post("/applyInternship", async (req, res) => {
     });
   });
 })
-app.listen(process.env.PORT || 3000, () => { console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env); });
+app.listen(PORT);
