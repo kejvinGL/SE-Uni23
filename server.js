@@ -7,6 +7,7 @@ const pool = require('./db');
 const queries = require('./src/queries');
 const cookieParser = require('cookie-parser');
 const app = express();
+const PORT = process.env.PORT || 3000
 
 // Configuration
 app.set("view engine", "ejs");
@@ -15,6 +16,9 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Middleware
 app.use(cookieParser());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static());
+}
 
 // Routes
 app.get("/", (req, res) => {
@@ -156,4 +160,4 @@ app.post("/applyInternship", async (req, res) => {
   });
 })
 
-app.listen(process.env.PORT || 3000);
+app.listen(PORT);
