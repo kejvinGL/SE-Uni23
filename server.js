@@ -23,7 +23,8 @@ if (process.env.NODE_ENV === "production") {
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("login.ejs", { error: null });
+  res.send('Hello World')
+  // res.render("login.ejs", { error: null });
 });
 
 
