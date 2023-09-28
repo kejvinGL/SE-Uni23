@@ -3,7 +3,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require("path");
 
-const pool = require("./db");
+const pool = require("./src/db");
 const queries = require("./src/queries");
 
 const cookieParser = require("cookie-parser");
@@ -22,10 +22,8 @@ app.use(cookieParser());
 const router = express.Router();
 const adminRoutes = require("./src/routes/admin");
 const studentRoutes = require("./src/routes/student");
-const routes = require("./src/routes/routes");
 app.use(adminRoutes);
 app.use(studentRoutes);
-app.use(routes);
 
 app.get("/", (req, res) => {
   res.render("login.ejs", { error: null });
