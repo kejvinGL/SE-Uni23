@@ -1,5 +1,4 @@
 const express = require("express");
-const serverless = require("serverless-http");
 const app = express();
 const PORT = process.env.PORT || 3000;
 const path = require("path");
@@ -26,12 +25,10 @@ const studentRoutes = require("./src/routes/student");
 const routes = require("./src/routes/routes");
 app.use(adminRoutes);
 app.use(studentRoutes);
+app.use(routes);
 
 app.get("/", (req, res) => {
   res.render("login.ejs", { error: null });
 });
 
-app.use("/.netlify/functions/api", router);
 app.listen(PORT);
-
-module.exports.handler = serverless(app);
