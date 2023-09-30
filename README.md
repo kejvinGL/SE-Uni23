@@ -9,7 +9,7 @@ I used this opportunity to further my understanding of JavaScript and to introdu
 My main focus was to learn more about Backend Dev, so the Design of the site is very basic and functional 'enough'.
 
 The admin panel can we accesed by the username and password (admin:admin)
-The admin user can create Students,which are given a generated username and password (<firstname><lastname><birthyear>:<lastname>123)
+The admin user can create Students,which are given a generated username and password (firstnamelastnamebirthyear:lastname123)
 Admins can create Internships which are displayed to the Students in the Internships tab according to their Faculty.
 Admins can resolve Complaints submited by Students in the Complaints tab.
 
